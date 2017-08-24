@@ -1,0 +1,22 @@
+PATH
+  remote: .
+  specs:
+    crypto_val (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (5.10.1)
+    rake (10.4.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler (~> 1.13)
+  crypto_val!
+  minitest (~> 5.0)
+  rake (~> 10.0)
+
+BUNDLED WITH
+   1.13.2
