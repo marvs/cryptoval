@@ -1,5 +1,5 @@
-module CryptoVal::FiatExchange
-  class Fixer
+module CryptoVal
+  class FiatExchange::Fixer
     DEFAULT_SOURCE = "USD"
     DEFAULT_TARGET = "PHP"
     

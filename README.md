@@ -1,6 +1,6 @@
 # CryptoVal
 
-CryptoVal is a Ruby gem that fetches the latest value of a cryptocurrency. In addition, it also provides exchange rate conversion for several currencies.
+CryptoVal is a Ruby gem that fetches the latest value of a Cryptocurrency. In addition, it also provides exchange rate conversion for several currencies.
 
 ## Installation
 
@@ -19,6 +19,8 @@ Or install it yourself as:
     $ gem install crypto_val
 
 ## Usage
+
+### Basic Usage
 
 The basic usage of this gem is to get the latest USD value of Bitcoin (BTC):
 
@@ -40,6 +42,19 @@ For example, to get the PHP value of Ripple (XRP):
 This returns the following:
 
 `{:symbol=>"XRP", :currency=>"PHP", :value=>12.03}`
+
+### Exchange Rate
+
+It is possible to just get the current exchange rate for different currencies. This method can be used for a more performant code by fetching the current exchange rate only once for all of the Cryptocurrency values.
+
+`CryptoVal::FiatExchange.fetch(source_currency: "USD", target_currency: "PHP")`
+
+* source_currency - the fiat symbol of the source currency (defaults to "USD")
+* target_currency - the fiat symbol of the target currency
+
+This returns the date and the current exchange rate:
+
+`{:source_currency=>"USD", :target_currency=>"PHP", :date=>#<Date: 2017-08-24 ((2457990j,0s,0n),+0s,2299161j)>, :rate=>51.08}`
 
 ## Development
 
