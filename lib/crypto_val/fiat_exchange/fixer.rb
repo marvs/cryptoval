@@ -14,6 +14,10 @@ module CryptoVal
       format_response
     end
     
+    def self.fetch opts={}
+      new(opts).fetch
+    end
+    
     private
     
     def base_url
