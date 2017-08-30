@@ -5,8 +5,10 @@ module CryptoVal
     DEFAULT_CURRENCY = "USD"
     
     def initialize opts={}
-      @symbol   = opts[:symbol] || DEFAULT_CRYPTO
-      @currency = opts[:currency] || DEFAULT_CURRENCY
+      @symbol       = opts[:symbol] || DEFAULT_CRYPTO
+      @currency     = opts[:currency] || DEFAULT_CURRENCY
+      @crypto_klass = opts[:crypto_klass] || CryptoVal::CryptoExchange::Cryptonator
+      @fiat_klass   = opts[:fiat_klass] || CryptoVal::FiatExchange
     end
     
     def fetch
@@ -24,11 +26,11 @@ module CryptoVal
     private
     
     def crypto
-      @crypto ||= CryptoVal::CryptoExchange::Cryptonator.new({ symbol: @symbol }).fetch
+      @crypto ||= @crypto_klass.fetch({ symbol: @symbol })
     end
     
     def fiat
-      @fiat ||= CryptoVal::FiatExchange::Fixer.new({ target_currency: @currency }).fetch
+      @fiat ||= @fiat_klass.fetch({ target_currency: @currency })
     end
     
     def crypto_value

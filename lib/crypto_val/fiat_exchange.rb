@@ -4,7 +4,7 @@ module CryptoVal
     
     def initialize opts={}
       @source_currency  = opts[:source_currency] || DEFAULT_CURRENCY
-      @target_currency = opts[:target_currency]
+      @target_currency  = opts[:target_currency]
       @exchange_klass   = opts[:exchange_class] || CryptoVal::FiatExchange::Fixer
     end
     
