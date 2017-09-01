@@ -1,3 +1,4 @@
+require 'date'
 require 'net/http'
 require 'json'
 require "crypto_val/version"
