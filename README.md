@@ -2,7 +2,7 @@
 
 CryptoVal is a Ruby gem that fetches the latest value of a Cryptocurrency. In addition, it also provides exchange rate conversion for several currencies.
 
-[![Gem Version](https://badge.fury.io/rb/cryptoval.svg)](https://badge.fury.io/rb/cryptoval)
+[![Gem Version](https://badge.fury.io/rb/crypto_val.svg)](https://badge.fury.io/rb/crypto_val)
 [![Build Status](https://travis-ci.org/marvs/cryptoval.png)](https://travis-ci.org/marvs/cryptoval)
 
 ## Installation
