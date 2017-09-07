@@ -59,6 +59,21 @@ This returns the date and the current exchange rate:
 
 `{:source_currency=>"USD", :target_currency=>"PHP", :date=>#<Date: 2017-08-24 ((2457990j,0s,0n),+0s,2299161j)>, :rate=>51.08}`
 
+### List All Cryptocurrencies
+
+You can also fetch a list of cryptocurrencies and get their symbol and name.
+
+`CryptoVal::List.fetch`
+
+This returns an array of hashes, like the following:
+
+`[{:symbol=>"IND", :name=>"Indorse"}, {:symbol=>"PGL", :name=>"Prospectors"}]`
+
+Each hash contains the following data:
+
+* symbol - the coin symbol of the Cryptocurrency
+* name - the name of the Cryptocurrency
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

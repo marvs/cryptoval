@@ -1,5 +1,5 @@
 module CryptoVal
-  class List::CryptoCompare
+  class List::CryptoCoinCharts
     
     def fetch
       format_response
@@ -12,11 +12,11 @@ module CryptoVal
     private
     
     def base_url
-      "https://www.cryptocompare.com"
+      "https://api.cryptocoincharts.info"
     end
     
     def url
-      "#{base_url}/api/data/coinlist"
+      "#{base_url}/listCoins"
     end
     
     def response
@@ -37,15 +37,11 @@ module CryptoVal
     
     def format_response
       list = []
-      parsed["Data"].keys.each do |key|
-        data = parsed["Data"][key]
+      parsed.each do |data|
         if data.is_a?(Hash)
-          logo = data["ImageUrl"].to_s.empty? ? "" : "#{base_url}#{data["ImageUrl"]}"
           list << { 
-                    symbol: data["Name"], 
-                    name: data["CoinName"],
-                    logo: logo,
-                    algorithm: data["Algorithm"] 
+                    symbol: data["id"].upcase, 
+                    name: data["name"] 
                   }
         end
       end

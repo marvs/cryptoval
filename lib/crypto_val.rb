@@ -8,6 +8,7 @@ require "crypto_val/fiat_exchange/fixer"
 require "crypto_val/latest"
 require "crypto_val/list"
 require "crypto_val/list/crypto_compare"
+require "crypto_val/list/crypto_coin_charts"
 
 module CryptoVal
 end
